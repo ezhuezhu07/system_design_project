@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: authservice-configmap
+
+  #since you're using Minikube, there is a special DNS name that you can use to access services running on your host machine from within the Minikube cluster. The DNS name is host.minikube.internal.So, if your MySQL service is running on your host machine, you can use host.minikube.internal as the MYSQL_HOST in your Kubernetes configuration.
+
+data:
+  MYSQL_HOST: host.minikube.internal
+  MYSQL_PORT: "3306"  # Assuming the default MySQL port
+  MYSQL_DB: auth  
+  MYSQL_USER: auth_user
+
